@@ -1,0 +1,19 @@
+Escribir un programa para que, dado un número de tres cifras, imprima la cifra
+central. En la entrada de datos un mensaje debe decir “Indicar un número de tres cifras”,
+la salida será: 
+
+numero, decimal unidad: N
+
+Comienzo 
+
+    Escribir: "Ingrese un numero de dos cifras"
+    Leer num
+
+    si num >= 10 y nro <= 99 entonces
+        unidad <- numero mod 10
+        decimal <- trunc (numero/10)
+        mostrar: "La cifra de las unidades es: ", unidad
+        mostrar: "La cifra de las unidades es: ", decimal
+        sino escribir "Ingrese un número correcto"
+    fin si   
+Fin
