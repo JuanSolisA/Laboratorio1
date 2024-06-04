@@ -1,6 +1,6 @@
 # Ejercicios de Laboratorio de Programación
 
-Este repositorio contiene la ejercitación realizada durante mis prácticas de estructuras de datos y bases de datos, utilizando el lenguaje C.
+Bienvenido al repositorio de la materia de Laboratorio de Programación del Inspt. Acá encontrarás todos los trabajos prácticos y ejercicios realizados durante el curso.
 
 ## Estructura del Repositorio
 
