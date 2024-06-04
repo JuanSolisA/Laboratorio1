@@ -1,4 +1,4 @@
-# Ejercicios de Laboratorio de Programación
+# Laboratorio de Programación
 
 Bienvenido al repositorio de la materia de Laboratorio de Programación del Inspt. Acá encontrarás todos los trabajos prácticos y ejercicios realizados durante el curso.
 
