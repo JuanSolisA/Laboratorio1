@@ -1,19 +1,16 @@
 Proceso TaTeTi
-    
-    // incializa dos matrices de 3x3, una para guardar la ficha que se ve, 
-    // y otra para un valor asociado a la ficha, para un jugador sera 1, para
-    // el otro 2, entoces para ver quien gano se multiplica por fila, por 
-    // columna y por diagonal, si el resultado es 1 gano el primer jugador,
-    // si es 8 gano el segundo, si es 0 es porque faltaba completar, si
-    // es otra cosa, estan las tres fichas, pero no son del mismo jugador
+	
+    // Inicializa dos matrices de 3x3
     Dimension Tab1[3,3]
     Dimension Tab2[3,3]
-    Para i<-1 Hasta 3 Hacer
+	
+    Para i<-0 Hasta 2 Hacer
         Para j<-0 Hasta 2 Hacer
             Tab1[i,j]<-0
             Tab2[i,j]<-" "
         FinPara
     FinPara
+    
     TurnoJugador1<-Verdadero
     Terminado<-Falso
     Ganador<-Falso
@@ -21,34 +18,34 @@ Proceso TaTeTi
     
     Mientras ~ Terminado hacer
         
-        // dibuja el tablero
+        // Dibuja el tablero
         Borrar Pantalla
         Escribir " "
         Escribir "      ||     ||     "
-        Escribir "   ",Tab2[1,1],"  ||  ",Tab2[1,2],"  ||  ",Tab2[1,3]
+        Escribir "   ",Tab2[0,0],"  ||  ",Tab2[0,1],"  ||  ",Tab2[0,2]
         Escribir "     1||    2||    3"
         Escribir " =====++=====++======"
         Escribir "      ||     ||     "
-        Escribir "   ",Tab2[2,1],"  ||  ",Tab2[2,2],"  ||  ",Tab2[2,3]
+        Escribir "   ",Tab2[1,0],"  ||  ",Tab2[1,1],"  ||  ",Tab2[1,2]
         Escribir "     4||    5||    6"
         Escribir " =====++=====++======"
         Escribir "      ||     ||     "
-        Escribir "   ",Tab2[3,1],"  ||  ",Tab2[3,2],"  ||  ",Tab2[3,3]
+        Escribir "   ",Tab2[2,0],"  ||  ",Tab2[2,1],"  ||  ",Tab2[2,2]
         Escribir "     7||    8||    9"
         Escribir " "
         
         Si ~ Ganador y CantTurnos<9 Entonces
             
-            // carga auxiliares segun a qué jugador le toca
+            // Carga auxiliares según a qué jugador le toca
             Si TurnoJugador1 Entonces
                 Ficha<-'O'; Valor<- 1; Objetivo<-1
-                Escribir "Turno del jugador 1 (X)"
+                Escribir "Turno del jugador 1 (O)"
             Sino
                 Ficha<-'X'; Valor<- 2; Objetivo<-8
-                Escribir "Turno del jugador 2 (O)"
+                Escribir "Turno del jugador 2 (X)"
             FinSi
             
-            // pide la posición para colocar la ficha y la valida
+            // Pide la posición para colocar la ficha y la valida
             Escribir "Ingrese la Posición (1-9):"
             
             Repetir
@@ -57,26 +54,27 @@ Proceso TaTeTi
                     Escribir "Posición incorrecta, ingrese nuevamente: "
                     Pos<-99;
                 Sino
-                    i<-trunc((Pos-1)/3)+1
-                    j<-((Pos-1) MOD 3)+1
+                    i<-trunc((Pos-1)/3)
+                    j<-((Pos-1) MOD 3)
                     Si Tab1[i,j]<>0 Entonces
-                        pos<-99
+                        Pos<-99
                         Escribir "Posición incorrecta, ingrese nuevamente: "
                     FinSi
                 FinSi
             Hasta Que Pos<>99
-            // guarda la ficha en la matriz tab2 y el valor en tab1
+            
+            // Guarda la ficha en la matriz Tab2 y el valor en Tab1
             CantTurnos<-CantTurnos+1
             Tab1[i,j]<-Valor
             Tab2[i,j]<-Ficha
             
-            // verifica si ganó, buscando que el producto de las fichas en el tablero de Objetivo
+            // Verifica si ganó, buscando que el producto de las fichas en el tablero de Objetivo
             aux_d1<-1; aux_d2<-1
-            Para i<-1 hasta 3 hacer
+            Para i<-0 hasta 2 hacer
                 aux_i<-1; aux_j<-1
                 aux_d1<-aux_d1*Tab1[i,i]
-                aux_d2<-aux_d2*Tab1[i,4-i]
-                Para j<-1 hasta 3 hacer
+                aux_d2<-aux_d2*Tab1[i,2-i]
+                Para j<-0 hasta 2 hacer
                     aux_i<-aux_i*Tab1[i,j]
                     aux_j<-aux_j*Tab1[j,i]
                 FinPara
