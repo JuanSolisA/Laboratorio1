@@ -34,11 +34,26 @@ Funcion posicionPelota <- MezclarVasos(posicionInicial)
         Escribir "Vasos y pelota:"
         Escribir " 1     2     3 "
         Si posicionPelota = 1 Entonces
-            Escribir " O     _     _ "
+			Escribir "     /^^^^\          /^^^^\          /^^^^\      "
+			Escribir "    /      \        /      \        /      \     "
+			Escribir "   /        \      /        \      /        \    "
+			Escribir "  /          \    /          \    /          \   "
+			Escribir " /     __     \  /            \  /            \  "
+			Escribir "/_____(__)_____\/______________\/______________\ "
 			Sino Si posicionPelota = 2 Entonces
-				Escribir " _     O     _ "
+					Escribir "     /^^^^\          /^^^^\          /^^^^\      "
+					Escribir "    /      \        /      \        /      \     "
+					Escribir "   /        \      /        \      /        \    "
+					Escribir "  /          \    /          \    /          \   "
+					Escribir " /            \  /     __     \  /            \  "
+					Escribir "/______________\/_____(__)_____\/______________\ "
 				Sino
-				Escribir " _     _     O "
+					Escribir "     /^^^^\          /^^^^\          /^^^^\      "
+					Escribir "    /      \        /      \        /      \     "
+					Escribir "   /        \      /        \      /        \    "
+					Escribir "  /          \    /          \    /          \   "
+					Escribir " /            \  /            \  /     __     \  "
+					Escribir "/______________\/______________\/_____(__)_____\ "
 			FinSi
 		FinSi
 		
