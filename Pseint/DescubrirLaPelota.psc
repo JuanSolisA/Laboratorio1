@@ -58,13 +58,14 @@ Funcion posicionPelota <- MezclarVasos(posicionInicial, ronda, puntosTotales)
 		FinSi
 		
 		
-		Esperar (50 / ronda) Milisegundos // + velocidad en cada ronda
+		Esperar (1000 / ronda) Milisegundos // + velocidad en cada ronda
 	FinPara
 Fin Funcion
 
 // función que combina la elección del jugador y el tiempo de respuesta
 Funcion puntosObtenidos <- ObtenerResultado(posicionPelota, ronda, puntosTotales)
-    Definir ha, minInicio, minFin, segInicio, segFin, tiempoRespuesta, eleccionJugador, puntosBase Como Entero
+    Definir ha, minInicio, minFin, segInicio, segFin, tiempoRespuesta, puntosBase Como Entero
+	Definir eleccionJugador Como Real
     
     Borrar Pantalla
     Escribir "Ronda: ", ronda, " - Puntos Totales: ", puntosTotales
@@ -82,7 +83,7 @@ Funcion puntosObtenidos <- ObtenerResultado(posicionPelota, ronda, puntosTotales
     segInicio <- ha % 100
 	
     Leer eleccionJugador
-	Mientras (eleccionJugador < 1 o eleccionJugador > 3) Hacer
+	Mientras (eleccionJugador < 1 o eleccionJugador > 3 o eleccionJugador<>trunc(eleccionJugador)) Hacer
 		Escribir "Ingrese un valor válido, vaso 1, 2 o 3"
 		Leer eleccionJugador
 	Fin Mientras
